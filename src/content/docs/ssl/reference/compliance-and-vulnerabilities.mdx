@@ -1,6 +1,6 @@
 ---
 pcx_content_type: how-to
-description: Configure your Cloudflare zone for PCI DSS compliance — set minimum TLS version, configure approved cipher suites, enable TLS 1.3, and understand how Cloudflare interacts with PCI ASV scans.
+description: Configure your Cloudflare zone for PCI DSS compliance — set minimum TLS version, configure approved cipher suites, and understand how Cloudflare interacts with PCI ASV scans.
 products:
   - ssl
 source: https://support.cloudflare.com/hc/en-us/articles/205043158-PCI-compliance-and-Cloudflare-SSL-TLS
@@ -54,7 +54,7 @@ Refer to [Minimum TLS Version](/ssl/edge-certificates/additional-options/minimum
 PCI DSS prohibits weak and deprecated cipher algorithms. You must restrict your zone to the PCI DSS-approved cipher list.
 
 :::note
-- You cannot configure specific TLS 1.3 cipher suites. When you [enable TLS 1.3](#step-3-enable-tls-13), Cloudflare automatically uses all supported TLS 1.3 cipher suites, all of which meet PCI DSS requirements. The cipher list in this step applies to TLS 1.2 connections only.
+- You cannot configure specific TLS 1.3 cipher suites. When you [enable TLS 1.3](#step-3-enable-tls-13-recommended), Cloudflare automatically uses all supported TLS 1.3 cipher suites, all of which meet PCI DSS requirements. The cipher list in this step applies to TLS 1.2 connections only.
 - Updating cipher suites triggers certificate redeployment, which may take a few minutes. Wait before running a verification scan.
 :::
 
@@ -78,9 +78,9 @@ Follow the steps in [Customize cipher suites (dashboard)](/ssl/edge-certificates
 	}}
 />
 
-### Step 3: Enable TLS 1.3
+### Step 3: Enable TLS 1.3 (recommended)
 
-TLS 1.3 provides stronger security guarantees than TLS 1.2, eliminates several legacy handshake patterns, and is required alongside TLS 1.2 for a complete PCI DSS-compliant configuration.
+TLS 1.3 provides stronger security guarantees than TLS 1.2, eliminates several legacy handshake patterns, and is recommended alongside TLS 1.2 for a stronger, future-proof configuration. It is not required for PCI DSS compliance, which mandates TLS 1.2 as the minimum.
 
 1. In the Cloudflare dashboard, go to **SSL/TLS** > **Edge Certificates**.
 
