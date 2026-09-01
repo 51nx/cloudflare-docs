@@ -23,21 +23,21 @@ Client-Side Security Advanced is required to meet PCI DSS requirements 6.4.3 and
 
 Requirement 6.4.3 applies to all scripts that a payment page loads into the consumer's browser, regardless of whether those scripts are first-party or third-party.
 
-| Sub-requirement | What it requires | How client-side security addresses it |
+| Control objective | What it requires | How client-side security addresses it |
 | --- | --- | --- |
-| 6.4.3.a | A documented inventory of all scripts loaded to a payment page | The **Monitor resources** view lists every script loaded on monitored pages, including third-party scripts |
-| 6.4.3.b | A written justification (business or technical) for each script | You can review and annotate each script in the dashboard to document its purpose |
-| 6.4.3.c | A method to confirm that each script is authorized | Rules and integrity hash checks detect scripts that were not explicitly authorized |
+| Script inventory | A documented inventory of all scripts loaded to a payment page | The **Monitor resources** view lists every script loaded on monitored pages, including third-party scripts |
+| Business justification | A written justification (business or technical) for each script | You can review and annotate each script in the dashboard to document its purpose |
+| Authorization method | A method to confirm that each script is authorized | Rules and integrity hash checks detect scripts that were not explicitly authorized |
 
 ### Requirement 11.6.1 — Tamper detection for payment pages
 
 Requirement 11.6.1 requires a mechanism that detects unauthorized modifications to your payment pages and their security headers.
 
-| Sub-requirement | What it requires | How client-side security addresses it |
+| Control objective | What it requires | How client-side security addresses it |
 | --- | --- | --- |
-| 11.6.1.a | Detect unauthorized changes to HTTP security headers | Alerts fire when monitored headers (such as `Content-Security-Policy` or `X-Frame-Options`) change unexpectedly |
-| 11.6.1.b | Detect unauthorized changes to page content | Alerts fire when scripts, connections, or cookies on a monitored page change |
-| 11.6.1.c | Detection must run at least once every seven days | Cloudflare's detection runs continuously — no manual scheduling is required |
+| Header tamper detection | Detect unauthorized changes to HTTP security headers | Alerts fire when monitored headers (such as `Content-Security-Policy` or `X-Frame-Options`) change unexpectedly |
+| Content tamper detection | Detect unauthorized changes to page content | Alerts fire when scripts, connections, or cookies on a monitored page change |
+| Detection frequency | Detection must run at least once every seven days | Cloudflare's detection runs continuously — no manual scheduling is required |
 
 ## Get started
 
